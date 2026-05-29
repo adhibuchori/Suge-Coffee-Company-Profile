@@ -2,6 +2,7 @@
 
 import { useScrollPosition } from '@/hooks/useScrollPosition';
 import { useActiveSection } from '@/hooks/useActiveSection';
+import { useBodyScrollLock } from '@/hooks/useBodyScrollLock';
 import { useUiStore } from '@/store/ui-store';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
@@ -19,6 +20,7 @@ export function Nav() {
   const { scrolled } = useScrollPosition(60);
   const { mobileMenuOpen, toggleMobileMenu, setMobileMenuOpen } = useUiStore();
   const activeSection = useActiveSection(NAV_LINKS.map((l) => l.href.slice(1)));
+  useBodyScrollLock(mobileMenuOpen);
 
   return (
     <>
@@ -26,9 +28,11 @@ export function Nav() {
         id="mainNav"
         className={cn(
           'fixed top-0 left-0 right-0 z-[100] flex items-center justify-between px-8 md:px-16 py-[1.4rem] transition-all duration-400',
-          scrolled
-            ? 'bg-[rgba(250,248,244,0.55)] backdrop-blur-xl backdrop-saturate-150 shadow-[0_1px_0_rgba(0,0,0,0.06)] border-b border-white/30'
-            : 'bg-transparent',
+          mobileMenuOpen
+            ? 'bg-[var(--emerald-dark)]'
+            : scrolled
+              ? 'bg-[rgba(250,248,244,0.55)] backdrop-blur-xl backdrop-saturate-150 shadow-[0_1px_0_rgba(0,0,0,0.06)] border-b border-white/30'
+              : 'bg-transparent',
         )}
       >
         <a
@@ -43,7 +47,7 @@ export function Nav() {
             height={24}
             className={cn(
               'transition-all duration-300 object-contain shrink-0',
-              scrolled
+              scrolled && !mobileMenuOpen
                 ? 'brightness-[0.35] sepia saturate-[3] hue-rotate-[100deg]'
                 : 'brightness-0 invert',
             )}
@@ -52,7 +56,7 @@ export function Nav() {
           <span
             className={cn(
               'transition-colors duration-300',
-              scrolled ? 'text-emerald-dark' : 'text-white',
+              scrolled && !mobileMenuOpen ? 'text-emerald-dark' : 'text-white',
             )}
           >
             <span className="block text-[1.5rem] font-semibold tracking-[0.04em] font-serif leading-none">
@@ -79,21 +83,21 @@ export function Nav() {
           <span
             className={cn(
               'block w-6 h-[1.5px] transition-all duration-300 origin-center',
-              scrolled ? 'bg-ink' : 'bg-white',
+              scrolled && !mobileMenuOpen ? 'bg-ink' : 'bg-white',
               mobileMenuOpen && 'translate-y-[7.5px] rotate-45',
             )}
           />
           <span
             className={cn(
               'block w-6 h-[1.5px] transition-all duration-300',
-              scrolled ? 'bg-ink' : 'bg-white',
+              scrolled && !mobileMenuOpen ? 'bg-ink' : 'bg-white',
               mobileMenuOpen && 'opacity-0 scale-x-0',
             )}
           />
           <span
             className={cn(
               'block w-6 h-[1.5px] transition-all duration-300 origin-center',
-              scrolled ? 'bg-ink' : 'bg-white',
+              scrolled && !mobileMenuOpen ? 'bg-ink' : 'bg-white',
               mobileMenuOpen && '-translate-y-[7.5px] -rotate-45',
             )}
           />

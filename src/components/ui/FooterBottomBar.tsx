@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export function FooterBottomBar() {
   return (
-    <div className="mt-16 pt-6 border-t border-[oklch(98%_0.006_90/0.05)] flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+    <div className="mt-16 pt-6 border-t border-[oklch(98%_0.006_90/0.05)] flex flex-col md:flex-row justify-between items-center gap-4">
       <span className="font-sans text-[0.62rem] tracking-[0.14em] uppercase text-[oklch(50%_0.018_60/0.6)]">
         &copy; 2026 Suge Coffee &amp; Eatery
       </span>

@@ -14,13 +14,16 @@ export function Footer() {
     <footer className="bg-[oklch(14%_0.007_162)] border-t border-[oklch(98%_0.006_90/0.06)]">
       <div className="max-w-6xl mx-auto px-8 md:px-16 py-16 md:py-20">
         {/* Three-column layout */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 items-start text-center md:text-left">
           {/* Left — navigation */}
-          <nav aria-label="Footer navigation">
+          <nav
+            aria-label="Footer navigation"
+            className="flex flex-col items-center md:items-start"
+          >
             <p className="font-sans text-[0.6rem] tracking-[0.2em] uppercase text-[oklch(50%_0.018_60)] mb-5">
               Navigasi
             </p>
-            <ul className="flex flex-col gap-3 list-none p-0 m-0">
+            <ul className="flex flex-col gap-3 list-none p-0 m-0 items-center md:items-start">
               {navLinks.map(({ href, label }) => (
                 <li key={href}>
                   <a
@@ -35,7 +38,7 @@ export function Footer() {
           </nav>
 
           {/* Center — brand identity */}
-          <div className="flex flex-col items-start md:items-center text-left md:text-center">
+          <div className="flex flex-col items-center text-center">
             <Image
               src="/suge-coffee-logo.png"
               alt="Suge Coffee & Eatery"
@@ -62,11 +65,11 @@ export function Footer() {
           </div>
 
           {/* Right — hours + social */}
-          <div className="flex flex-col items-start md:items-end">
+          <div className="flex flex-col items-center md:items-end">
             <p className="font-sans text-[0.6rem] tracking-[0.2em] uppercase text-[oklch(50%_0.018_60)] mb-5">
               Info
             </p>
-            <p className="font-sans text-[0.8rem] tabular-nums text-[oklch(77%_0.04_80/0.6)] leading-[1.8] text-right">
+            <p className="font-sans text-[0.8rem] tabular-nums text-[oklch(77%_0.04_80/0.6)] leading-[1.8] text-center md:text-right">
               Setiap hari
               <br />
               09.00 – 22.00 WIB

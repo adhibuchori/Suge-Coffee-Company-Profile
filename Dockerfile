@@ -13,7 +13,7 @@ RUN bun install --frozen-lockfile
 FROM oven/bun:alpine AS builder
 WORKDIR /app
 
-ARG NEXT_PUBLIC_APP_URL=http://localhost:3010
+ARG NEXT_PUBLIC_APP_URL=http://localhost:3016
 ENV NEXT_PUBLIC_APP_URL=$NEXT_PUBLIC_APP_URL
 ENV NEXT_TELEMETRY_DISABLED=1
 
@@ -44,8 +44,8 @@ COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
 USER nextjs
 
-EXPOSE 3010
-ENV PORT=3010
+EXPOSE 3016
+ENV PORT=3016
 ENV HOSTNAME="0.0.0.0"
 
 CMD ["bun", "server.js"]

@@ -25,7 +25,7 @@ export function DesktopNav({
                 scrolled ? 'text-muted hover:text-emerald' : 'text-white/85 hover:text-white',
               )}
               style={{
-                opacity: hasActive && !isActive ? 0.35 : 1,
+                opacity: hasActive && !isActive ? 0.6 : 1,
               }}
             >
               {link.label}

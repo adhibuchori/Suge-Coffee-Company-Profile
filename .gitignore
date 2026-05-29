@@ -34,4 +34,3 @@ next-env.d.ts
 coverage/
 
 # Bun
-bun.lock

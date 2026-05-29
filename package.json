@@ -1,0 +1,59 @@
+{
+  "name": "suge-coffee",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --port 3010",
+    "build": "next build",
+    "start": "next start",
+    "lint": "oxlint -c oxlint.json --ignore-path=.oxlintignore",
+    "format": "oxfmt --write",
+    "format:check": "oxfmt --check",
+    "fl": "bun format && oxlint -c oxlint.json --ignore-path=.oxlintignore",
+    "type-check": "tsc --noEmit",
+    "sync:workflows": "bash scripts/sync-workflows.sh",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.3.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.38.0",
+    "lucide-react": "^1.17.0",
+    "next": "16.2.6",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "tailwind-merge": "^3.6.0",
+    "tailwindcss": "^4.3.0",
+    "zustand": "^5.0.13"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@vitejs/plugin-react": "^6.0.2",
+    "@vitest/coverage-v8": "^4.1.7",
+    "babel-plugin-react-compiler": "1.0.0",
+    "husky": "^9.1.7",
+    "jsdom": "^29.1.1",
+    "oxfmt": "^0.50.0",
+    "oxlint": "^1.65.0",
+    "reactotron-react-js": "^3.3.17",
+    "typescript": "^5",
+    "vitest": "^4.1.7"
+  },
+  "ignoreScripts": [
+    "sharp",
+    "unrs-resolver"
+  ],
+  "trustedDependencies": [
+    "sharp",
+    "unrs-resolver"
+  ]
+}

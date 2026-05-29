@@ -1,0 +1,320 @@
+@import 'tailwindcss';
+
+@theme {
+  /* ─── Suge Coffee — Nature & Zen Palette (OKLCH) ────────────────────── */
+  --color-emerald: oklch(43% 0.09 162);
+  --color-emerald-light: oklch(54% 0.1 162);
+  --color-emerald-dark: oklch(30% 0.07 162);
+  --color-cream: oklch(98% 0.006 90);
+  --color-warm: oklch(94% 0.012 80);
+  --color-stone: oklch(77% 0.04 80);
+  --color-wood: oklch(60% 0.06 65);
+  --color-charcoal: oklch(14% 0.007 162);
+  --color-ink: oklch(20% 0.007 162);
+  --color-muted: oklch(50% 0.018 60);
+  --color-white: oklch(99% 0.004 162);
+
+  /* ─── Font families ─────────────────────────────────────────────────────── */
+  --font-serif: 'Shippori Mincho', Georgia, serif;
+  --font-jp: 'Noto Serif JP', serif;
+  --font-sans: 'Jost', sans-serif;
+}
+
+/* ─── Font variable bridge ──────────────────────────────────────────────────
+   Connects next/font/google CSS variables to Tailwind @theme tokens.
+   ─────────────────────────────────────────────────────────────────────────── */
+@theme {
+  --font-serif: var(--font-shippori-mincho), 'Shippori Mincho', Georgia, serif;
+  --font-jp: var(--font-noto-serif-jp), serif;
+  --font-sans: var(--font-jost), 'Jost', sans-serif;
+}
+
+/* ─── Raw CSS variable aliases ──────────────────────────────────────────────
+   ─────────────────────────────────────────────────────────────────────────── */
+:root {
+  --emerald: oklch(43% 0.09 162);
+  --emerald-light: oklch(54% 0.1 162);
+  --emerald-dark: oklch(30% 0.07 162);
+  --cream: oklch(98% 0.006 90);
+  --warm: oklch(94% 0.012 80);
+  --stone: oklch(77% 0.04 80);
+  --wood: oklch(60% 0.06 65);
+  --charcoal: oklch(14% 0.007 162);
+  --ink: oklch(20% 0.007 162);
+  --muted: oklch(50% 0.018 60);
+  --white: oklch(99% 0.004 162);
+
+  --serif: var(--font-shippori-mincho), 'Shippori Mincho', Georgia, serif;
+  --jp: var(--font-noto-serif-jp), 'Noto Serif JP', serif;
+  --sans: var(--font-jost), 'Jost', sans-serif;
+}
+
+/* ─── Global base ───────────────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: oklch(77% 0.04 80) transparent;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-weight: 300;
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Scrollbar styling ─────────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: oklch(77% 0.04 80 / 0.5);
+  border-radius: 3px;
+}
+
+/* ─── Keyframe animations ───────────────────────────────────────────────────── */
+@keyframes heroIn {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scrollPulse {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scaleY(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleY(1.1);
+  }
+}
+
+@keyframes ensoRotate {
+  from {
+    transform: translateY(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes emeraldPulse {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+
+/* ─── Scroll reveal utility ─────────────────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── Reduced motion ─────────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ─── Custom gradients from reference ───────────────────────────────────────── */
+/* Menu Gradients */
+.mc-1 {
+  background: linear-gradient(135deg, #2d6a5a, #3d8a74);
+}
+.mc-2 {
+  background: linear-gradient(135deg, #4a3728, #6b5240);
+}
+.mc-3 {
+  background: linear-gradient(135deg, #1c4a3f, #2d6a5a);
+}
+.mc-4 {
+  background: linear-gradient(135deg, #3b2f1e, #6b4f35);
+}
+.mc-5 {
+  background: linear-gradient(135deg, #2a4030, #4a7060);
+}
+.mc-6 {
+  background: linear-gradient(135deg, #5c4033, #8b6048);
+}
+.mc-7 {
+  background: linear-gradient(135deg, #1a3530, #2d5a50);
+}
+.mc-8 {
+  background: linear-gradient(135deg, #3d2e1e, #7a5c3e);
+}
+.mc-9 {
+  background: linear-gradient(135deg, #243830, #3d6055);
+}
+.mc-10 {
+  background: linear-gradient(135deg, #4a3020, #7a5035);
+}
+.mc-11 {
+  background: linear-gradient(135deg, #1e4038, #357060);
+}
+.mc-12 {
+  background: linear-gradient(135deg, #352515, #5c4020);
+}
+
+/* Gallery Gradients */
+.gb-1 {
+  background: linear-gradient(145deg, #1c4a3f, #2d6a5a);
+  color: rgba(255, 255, 255, 0.25);
+}
+.gb-2 {
+  background: linear-gradient(145deg, #3b2a1a, #5c4030);
+  color: rgba(255, 255, 255, 0.2);
+}
+.gb-3 {
+  background: linear-gradient(145deg, #2a4035, #3d6055);
+  color: rgba(255, 255, 255, 0.22);
+}
+.gb-4 {
+  background: linear-gradient(145deg, #1a3028, #2a5040);
+  color: rgba(255, 255, 255, 0.2);
+}
+.gb-5 {
+  background: linear-gradient(145deg, #4a3020, #7a5040);
+  color: rgba(255, 255, 255, 0.22);
+}
+.gb-6 {
+  background: linear-gradient(145deg, #243530, #386055);
+  color: rgba(255, 255, 255, 0.2);
+}
+.gb-7 {
+  background: linear-gradient(145deg, #1e3a30, #304e44);
+  color: rgba(255, 255, 255, 0.22);
+}
+.gb-8 {
+  background: linear-gradient(145deg, #3a2818, #5e4030);
+  color: rgba(255, 255, 255, 0.2);
+}
+.gb-9 {
+  background: linear-gradient(145deg, #243830, #3d6055);
+  color: rgba(255, 255, 255, 0.22);
+}
+
+/* ─── Responsive system ─────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  body {
+    font-size: 15px;
+  }
+}
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+/* ─── RSVP Form placeholder ──────────────────────────────────────────────────── */
+#contact form input::placeholder,
+#contact form textarea::placeholder {
+  text-transform: none;
+  letter-spacing: normal;
+}
+/* ─── Utility ───────────────────────────────────────────────────────────────── */
+@utility animate-enso {
+  animation: ensoRotate 60s linear infinite;
+}
+
+@utility animate-fade-slide {
+  animation: fadeSlideIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@utility no-scrollbar {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+  &::-webkit-scrollbar {
+    display: none !important;
+  }
+}
+
+/* ─── Responsive system ─────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  body {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+/* ─── RSVP Form ─────────────────────────────────────────────────────────────── */
+#contact form input {
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 1px solid rgba(244, 237, 228, 0.2) !important;
+  border-radius: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  color: var(--cream) !important;
+}
+#contact form input:focus {
+  border-bottom-color: var(--emerald) !important;
+}
+#contact form label {
+  font-family: var(--sans) !important;
+  color: rgba(244, 237, 228, 0.6) !important;
+  font-size: 0.65rem !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase !important;
+  margin-top: 1.5rem !important;
+}
+#contact form input::placeholder,
+#contact form textarea::placeholder {
+  color: rgba(244, 237, 228, 0.3) !important;
+  text-transform: none;
+  letter-spacing: normal;
+}

@@ -1,0 +1,13 @@
+.next
+node_modules
+.git
+*.md
+*.env*
+coverage
+.DS_Store
+.claude
+.serena
+.agents
+.vscode
+_workflow-source
+scripts

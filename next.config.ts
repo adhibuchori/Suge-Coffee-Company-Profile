@@ -26,6 +26,7 @@ const securityHeaders = [
       "img-src 'self' data: blob: https://images.unsplash.com",
       "font-src 'self'",
       isDev ? "connect-src 'self' ws: wss:" : "connect-src 'self'",
+      'frame-src https://www.google.com https://maps.google.com',
       "frame-ancestors 'none'",
     ].join('; '),
   },

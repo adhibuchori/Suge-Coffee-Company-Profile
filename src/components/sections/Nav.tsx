@@ -34,7 +34,7 @@ export function Nav() {
         <a
           href="#hero"
           aria-label="Suge Coffee & Eatery — Beranda"
-          className="no-underline flex items-center gap-2.5"
+          className="no-underline flex items-center gap-4"
         >
           <Image
             src="/suge-coffee-logo.png"

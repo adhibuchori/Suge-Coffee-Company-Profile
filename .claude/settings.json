@@ -1,8 +1,0 @@
-{
-  "enabledPlugins": {
-    "impeccable@impeccable": true
-  },
-  "env": {
-    "GH_TOKEN": "${GITHUB_PERSONAL_ACCESS_TOKEN}"
-  }
-}

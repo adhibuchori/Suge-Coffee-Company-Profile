@@ -31,8 +31,8 @@ export function CategoryItemRow({
         )}
       />
       <div className={cn('flex-1 min-w-0', item.name.startsWith('•') ? 'pl-5' : 'pl-1')}>
-        <div className="flex items-center flex-wrap gap-1.5">
-          <span className="flex flex-col">
+        <div className="flex items-center gap-1.5 min-w-0">
+          <span className="flex flex-col min-w-0">
             <span
               className={cn(
                 'text-[0.78rem] font-medium tracking-wide leading-snug font-sans transition-colors duration-200',

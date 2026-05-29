@@ -25,7 +25,7 @@ export function CategoryBlock({
           cat.subtitle ? 'border-b' : '',
         )}
       >
-        <div>
+        <div className="min-w-0 flex-1">
           <h3
             className={cn(
               'text-[0.95rem] uppercase tracking-[0.15em] font-bold font-sans flex items-center gap-2',
@@ -38,7 +38,7 @@ export function CategoryBlock({
                 isDark ? 'bg-emerald-light' : 'bg-emerald',
               )}
             />
-            {cat.title}
+            <span className="truncate">{cat.title}</span>
           </h3>
           {cat.subtitle && (
             <p

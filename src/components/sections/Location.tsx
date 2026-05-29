@@ -14,7 +14,7 @@ export function Location() {
       className="overflow-hidden grid grid-cols-1 md:grid-cols-2 min-h-[600px]"
     >
       {/* Left — charcoal info panel */}
-      <div className="reveal bg-[oklch(14%_0.007_162)] px-10 md:px-16 py-20 md:py-28 flex flex-col justify-between">
+      <div className="reveal bg-[oklch(14%_0.007_162)] px-10 md:px-16 py-28 flex flex-col justify-between">
         <div>
           <h2 className="font-serif font-light leading-[1.15] text-[clamp(2rem,3.5vw,3.2rem)] text-[oklch(98%_0.006_90)]">
             Temukan <em className="italic text-[oklch(54%_0.1_162)]">Suge</em>

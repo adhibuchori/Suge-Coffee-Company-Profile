@@ -124,8 +124,9 @@ export function Nav() {
                 transitionDelay: mobileMenuOpen ? `${i * 60}ms` : '0ms',
                 transform: mobileMenuOpen ? 'translateY(0)' : 'translateY(16px)',
                 opacity: mobileMenuOpen ? 1 : 0,
-                transition:
-                  'transform 0.4s cubic-bezier(.22,1,.36,1), opacity 0.4s cubic-bezier(.22,1,.36,1)',
+                transitionProperty: 'transform, opacity',
+                transitionDuration: '0.4s',
+                transitionTimingFunction: 'cubic-bezier(.22,1,.36,1)',
               }}
             >
               <a

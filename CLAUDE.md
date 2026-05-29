@@ -8,7 +8,7 @@
 ## Project Snapshot
 
 Next.js 16 + React 19 + TypeScript 5. Tailwind CSS v4. Fonts: Cormorant Garamond (serif) · Jost (sans) · Noto Serif JP.
-Dev: `rtk bun dev` · Default port: 3010
+Dev: `rtk bun dev` · Default port: 3016
 
 ---
 

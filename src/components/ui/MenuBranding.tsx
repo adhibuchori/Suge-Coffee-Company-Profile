@@ -25,6 +25,7 @@ export function MenuBranding() {
           alt="Suge Coffee & Eatery"
           width={32}
           height={38}
+          style={{ width: 'auto', height: 'auto' }}
           className="object-contain relative z-10"
         />
       </div>

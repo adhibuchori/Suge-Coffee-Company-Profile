@@ -101,13 +101,13 @@ export function Hero() {
         >
           <a
             href="#menu"
-            className="inline-block px-10 py-[0.85rem] border border-white/45 uppercase no-underline transition-all duration-300 hover:bg-white hover:text-emerald-dark hover:border-white text-white font-sans text-[0.75rem] tracking-[0.18em]"
+            className="inline-block px-6 md:px-10 py-[0.85rem] border border-white/45 uppercase no-underline transition-all duration-300 hover:bg-white hover:text-emerald-dark hover:border-white text-white font-sans text-[0.75rem] tracking-[0.18em] whitespace-nowrap"
           >
             Lihat Menu
           </a>
           <a
             href="#contact"
-            className="inline-block px-10 py-[0.85rem] bg-white/10 border border-white/20 uppercase no-underline transition-all duration-300 hover:bg-white hover:text-emerald-dark hover:border-white text-white font-sans text-[0.75rem] tracking-[0.18em]"
+            className="inline-block px-6 md:px-10 py-[0.85rem] bg-white/10 border border-white/20 uppercase no-underline transition-all duration-300 hover:bg-white hover:text-emerald-dark hover:border-white text-white font-sans text-[0.75rem] tracking-[0.18em] whitespace-nowrap"
           >
             Reservasi
           </a>

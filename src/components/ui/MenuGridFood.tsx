@@ -8,10 +8,10 @@ export function MenuGridFood() {
   return (
     <div
       key="food"
-      className="animate-fade-slide grid grid-cols-1 md:grid-cols-3 border border-charcoal/15 overflow-hidden bg-cream shadow-2xl rounded-2xl mx-2 md:mx-0"
+      className="animate-fade-slide grid grid-cols-1 md:grid-cols-3 border border-charcoal/15 overflow-hidden bg-cream shadow-2xl rounded-sm mx-2 md:mx-0"
     >
       {/* Column 1: Light Cream */}
-      <div className="flex flex-col py-8 border-b md:border-b-0 md:border-r border-charcoal/10 bg-cream rounded-t-2xl md:rounded-t-none md:rounded-tl-2xl md:rounded-bl-2xl">
+      <div className="flex flex-col py-8 border-b md:border-b-0 md:border-r border-charcoal/10 bg-cream rounded-t-sm md:rounded-t-none md:rounded-tl-sm md:rounded-bl-sm">
         <CategoryBlock cat={foodPanels.panel4[0]} />
         <div className="bg-warm mx-6 my-4 border border-charcoal/10 shadow-sm rounded-sm">
           <CategoryBlock cat={foodPanels.panel4[1]} />
@@ -25,7 +25,7 @@ export function MenuGridFood() {
       </div>
 
       {/* Column 3: Charcoal (Dark) */}
-      <div className="flex flex-col py-8 bg-charcoal rounded-b-2xl md:rounded-b-none md:rounded-tr-2xl md:rounded-br-2xl">
+      <div className="flex flex-col py-8 bg-charcoal rounded-b-sm md:rounded-b-none md:rounded-tr-sm md:rounded-br-sm">
         <div className="flex-1">
           <CategoryBlock
             cat={foodPanels.panel6[0]}

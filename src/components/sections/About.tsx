@@ -5,7 +5,7 @@ export function About() {
     { value: '2022', label: 'Berdiri' },
     { value: '3+', label: 'Tahun meracik' },
     { value: '40+', label: 'Pilihan sajian' },
-    { value: '1', label: 'Blend eksklusif' },
+    { value: '7', label: 'À La Suge' },
   ];
 
   return (

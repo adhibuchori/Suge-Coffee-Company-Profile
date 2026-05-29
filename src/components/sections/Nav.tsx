@@ -58,7 +58,7 @@ export function Nav() {
             <span className="block text-[1.5rem] font-semibold tracking-[0.04em] font-serif leading-none">
               Suge
             </span>
-            <span className="block font-sans font-normal text-[0.55rem] tracking-[0.18em] uppercase opacity-70 leading-none mt-0.5">
+            <span className="block font-sans font-normal text-[0.55rem] tracking-[0.18em] uppercase opacity-70 leading-none mt-2">
               Coffee &amp; Eatery
             </span>
           </span>

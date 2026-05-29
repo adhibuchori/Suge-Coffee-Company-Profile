@@ -8,7 +8,7 @@ export function MenuGridFood() {
   return (
     <div
       key="food"
-      className="animate-fade-slide grid grid-cols-1 md:grid-cols-3 border-t border-b border-charcoal/15 overflow-hidden bg-cream shadow-2xl"
+      className="animate-fade-slide grid grid-cols-1 md:grid-cols-3 border border-charcoal/15 overflow-hidden bg-cream shadow-2xl rounded-2xl"
     >
       {/* Column 1: Light Cream */}
       <div className="flex flex-col py-8 border-b md:border-b-0 md:border-r border-charcoal/10 bg-cream">

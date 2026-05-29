@@ -124,7 +124,7 @@ export function About() {
 
       {/* ── Numbers ───────────────────────────────────────────── */}
       <div className="border-t border-[oklch(43%_0.09_162/0.1)]">
-        <div className="max-w-6xl mx-auto px-8 md:px-16 py-14 md:py-18 grid grid-cols-2 md:grid-cols-4 gap-10">
+        <div className="max-w-6xl mx-auto px-8 md:px-16 py-14 md:py-18 grid grid-cols-2 md:grid-cols-4 gap-10 justify-items-center text-center">
           {stats.map((s, i) => (
             <div
               key={s.label}

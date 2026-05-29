@@ -45,6 +45,7 @@ export function Nav() {
             alt=""
             width={20}
             height={24}
+            style={{ width: 'auto', height: 'auto' }}
             className={cn(
               'transition-all duration-300 object-contain shrink-0',
               scrolled && !mobileMenuOpen

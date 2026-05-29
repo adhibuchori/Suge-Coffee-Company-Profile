@@ -44,7 +44,7 @@ export function Footer() {
               alt="Suge Coffee & Eatery"
               width={36}
               height={44}
-              style={{ width: 'auto' }}
+              style={{ width: 'auto', height: 'auto' }}
               className="object-contain brightness-0 invert opacity-80"
             />
             <span className="font-serif italic text-[3rem] text-[oklch(98%_0.006_90)] mt-2 leading-none">

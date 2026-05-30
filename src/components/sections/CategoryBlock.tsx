@@ -17,7 +17,7 @@ export function CategoryBlock({
   const subtitleColor = isDark ? 'text-stone/90' : 'text-muted';
 
   return (
-    <div className={cn('px-6 py-7 transition-all duration-300', boxStyle)}>
+    <div className={cn('px-4 md:px-5 lg:px-6 py-7 transition-all duration-300', boxStyle)}>
       <div
         className={cn(
           'flex justify-between items-end mb-5 pb-3',
@@ -28,7 +28,7 @@ export function CategoryBlock({
         <div className="min-w-0 flex-1">
           <h3
             className={cn(
-              'text-[0.95rem] uppercase tracking-[0.15em] font-bold font-sans flex items-center gap-2',
+              'text-[0.85rem] md:text-[0.9rem] lg:text-[0.95rem] uppercase tracking-[0.15em] font-bold font-sans flex items-center gap-2',
               textColor,
             )}
           >
@@ -38,7 +38,7 @@ export function CategoryBlock({
                 isDark ? 'bg-emerald-light' : 'bg-emerald',
               )}
             />
-            <span className="truncate">{cat.title}</span>
+            <span className="whitespace-normal break-words">{cat.title}</span>
           </h3>
           {cat.subtitle && (
             <p

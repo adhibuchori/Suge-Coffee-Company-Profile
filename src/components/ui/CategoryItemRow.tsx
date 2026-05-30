@@ -19,7 +19,7 @@ export function CategoryItemRow({
   return (
     <div
       className={cn(
-        'flex justify-between items-start gap-4 px-2 py-2 -mx-2 rounded-sm transition-all duration-200 group/menu-item relative',
+        'flex justify-between items-start gap-2 md:gap-3 lg:gap-4 px-2 py-2 -mx-2 rounded-sm transition-all duration-200 group/menu-item relative',
         isDark ? 'hover:bg-cream/5' : 'hover:bg-charcoal/[0.03]',
       )}
     >
@@ -73,7 +73,8 @@ export function CategoryItemRow({
       </div>
       <div
         className={cn(
-          'text-[0.82rem] font-semibold tracking-wide whitespace-nowrap flex gap-4 justify-end w-24 font-sans shrink-0 transition-colors duration-200',
+          'text-[0.82rem] font-semibold tracking-wide whitespace-nowrap flex gap-4 justify-end font-sans shrink-0 transition-colors duration-200',
+          item.price !== undefined ? 'w-auto min-w-[32px]' : 'w-24',
           textColor,
         )}
       >

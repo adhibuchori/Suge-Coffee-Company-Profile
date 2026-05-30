@@ -148,7 +148,7 @@ All design tokens live in `src/app/globals.css` under the `@theme` block.
 Docker 3-stage build: `deps → builder → runner`
 
 - Base image: `oven/bun:alpine`
-- Port: `3010`
+- Port: `3016`
 - Output: `standalone`
 
 ### 7.2 CI/CD

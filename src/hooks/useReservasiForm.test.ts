@@ -56,6 +56,36 @@ describe('useReservasiForm', () => {
     expect(url).toContain('Rina');
   });
 
+  it('includes catatan in the WhatsApp message when catatan is provided', () => {
+    const openSpy = vi.spyOn(window, 'open').mockImplementation(() => null);
+    const { result } = renderHook(() => useReservasiForm());
+
+    act(() => {
+      result.current.setJamValue('09.00 – 11.00');
+      result.current.setTamuValue('2 orang');
+      result.current.setTanggalValue('20 Jun 2026');
+    });
+
+    const form = document.createElement('form');
+    const namaInput = document.createElement('input');
+    namaInput.name = 'nama';
+    namaInput.value = 'Rina';
+    form.appendChild(namaInput);
+    const catatanTextarea = document.createElement('textarea');
+    catatanTextarea.name = 'catatan';
+    catatanTextarea.value = 'Dekat jendela ya';
+    form.appendChild(catatanTextarea);
+    form.reset = vi.fn();
+    const event = { preventDefault: vi.fn(), target: form } as unknown as React.FormEvent;
+
+    act(() => {
+      result.current.handleSubmit(event);
+    });
+
+    const url = openSpy.mock.calls[0][0] as string;
+    expect(url).toContain('Dekat%20jendela%20ya');
+  });
+
   it('resets all field values after a successful submit', () => {
     vi.spyOn(window, 'open').mockImplementation(() => null);
     const { result } = renderHook(() => useReservasiForm());

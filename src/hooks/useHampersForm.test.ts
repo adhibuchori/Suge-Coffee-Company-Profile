@@ -59,6 +59,34 @@ describe('useHampersForm', () => {
     expect(url).toContain('Budi');
   });
 
+  it('includes catatan in the WhatsApp message when catatan is provided', () => {
+    const openSpy = vi.spyOn(window, 'open').mockImplementation(() => null);
+    const { result } = renderHook(() => useHampersForm());
+
+    act(() => {
+      result.current.setTanggalValue('15 Mar 2026');
+    });
+
+    const form = document.createElement('form');
+    const namaInput = document.createElement('input');
+    namaInput.name = 'nama';
+    namaInput.value = 'Budi';
+    form.appendChild(namaInput);
+    const catatanTextarea = document.createElement('textarea');
+    catatanTextarea.name = 'catatan';
+    catatanTextarea.value = 'Tolong bungkus rapi';
+    form.appendChild(catatanTextarea);
+    form.reset = vi.fn();
+    const event = { preventDefault: vi.fn(), target: form } as unknown as React.FormEvent;
+
+    act(() => {
+      result.current.handleSubmit(event);
+    });
+
+    const url = openSpy.mock.calls[0][0] as string;
+    expect(url).toContain('Tolong%20bungkus%20rapi');
+  });
+
   it('resets tanggalValue after a successful submit', () => {
     vi.spyOn(window, 'open').mockImplementation(() => null);
     const { result } = renderHook(() => useHampersForm());

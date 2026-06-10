@@ -150,6 +150,22 @@ describe('useDatePicker', () => {
     expect(result.current.selected).toBeNull();
   });
 
+  it('does not close the calendar when ref.current is null on mousedown', () => {
+    const { result } = renderHook(() => useDatePicker('', () => {}));
+
+    // Leave ref.current as null (no DOM node assigned)
+    act(() => {
+      result.current.setOpen(true);
+    });
+
+    act(() => {
+      document.dispatchEvent(new MouseEvent('mousedown', { bubbles: true }));
+    });
+
+    // ref.current is null so the handler short-circuits; open remains true
+    expect(result.current.open).toBe(true);
+  });
+
   it('closes the calendar when outside mousedown fires after open', () => {
     const { result } = renderHook(() => useDatePicker('', () => {}));
 
